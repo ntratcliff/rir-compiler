@@ -1,6 +1,7 @@
 import sys
 import os
 import re
+import argparse
 from PIL import Image
 
 def get_image_size(instructions):
@@ -18,15 +19,14 @@ def set_image_data(instructions, image):
     return image
 
 # get ir filename and additional arguments
-flags = []
-for arg in sys.argv:
-    if arg[0] == "-":
-        flags.append(arg) # TODO: handle flags
-    else:
-        irpath = arg
+parser = argparse.ArgumentParser(description='Compiler for the Rainbow Intermediate Representation.')
+parser.add_argument('rirpath', type=str, help='rir file to be compiled')
+parser.add_argument('--output', '-o', help='destination file for compiled Rainbow script')
+
+args = parser.parse_args()
 
 # open ir file and get instructions
-with open(irpath) as f:
+with open(args.rirpath) as f:
     instructions = f.readlines()
 
 # remove whitespace, newline, and comments
@@ -35,7 +35,6 @@ for i in range(len(instructions)):
     instructions[i] = re.sub(ur'( )|(;.*$)', '', instructions[i])
 
 instructions = [x for x in instructions if x != ""]
-print instructions
 
 # create Rainbow image
 image = Image.new("RGB", get_image_size(instructions), "black")
@@ -43,7 +42,9 @@ pix = image.load()
 pix = set_image_data(instructions, pix)
 
 # write image file
-# TODO: output name param
-impath = os.path.splitext(irpath)[0]+'.bmp'
-print impath
-#image.save(impath)
+if args.output is not None:
+    impath = args.output
+else:
+    impath = os.path.splitext(args.rirpath)[0]+'.bmp'
+
+image.save(impath)
