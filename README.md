@@ -7,20 +7,20 @@ All whitespace characters, all characters following the `;` character, and all e
 
 The following RIR example represents a simple "Hello World!" program in Rainbow.
 ```
-0x100048  ;set cell 0x00 to value 0x48 (H)
-0x101045  ;set cell 0x01 to value 0x45 (E)
-0x10204C  ;set cell 0x02 to value 0x4C (L)
-0x10304C  ;set cell 0x03 to value 0x4C (L)
-0x10404F  ;set cell 0x04 to value 0x4F (O)
-0x105020  ;set cell 0x05 to value 0x20 ( )
-0x106057  ;set cell 0x06 to value 0x57 (W)
-0x10704F  ;set cell 0x07 to value 0x4F (O)
-0x108052  ;set cell 0x08 to value 0x52 (R)
-0x10904C  ;set cell 0x09 to value 0x4C (L)
-0x10A044  ;set cell 0x0A to value 0x44 (D)
-0x10B021  ;set cell 0x0B to value 0x21 (!)
-0x20010B  ;print values from cell 0x00 to cell 0x0B 
-0x000000  ;exit with status code 0x00
+100048  ;set cell 0x00 to value 0x48 (H)
+101045  ;set cell 0x01 to value 0x45 (E)
+10204C  ;set cell 0x02 to value 0x4C (L)
+10304C  ;set cell 0x03 to value 0x4C (L)
+10404F  ;set cell 0x04 to value 0x4F (O)
+105020  ;set cell 0x05 to value 0x20 ( )
+106057  ;set cell 0x06 to value 0x57 (W)
+10704F  ;set cell 0x07 to value 0x4F (O)
+108052  ;set cell 0x08 to value 0x52 (R)
+10904C  ;set cell 0x09 to value 0x4C (L)
+10A044  ;set cell 0x0A to value 0x44 (D)
+10B021  ;set cell 0x0B to value 0x21 (!)
+20010B  ;print values from cell 0x00 to cell 0x0B 
+000000  ;exit with status code 0x00
 ```
 
 #Using the RIR Compiler
