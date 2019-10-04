@@ -1,4 +1,5 @@
-#Rainbow Intermediate Representation
+# Rainbow Intermediate Representation
+
 The Rainbow Intermediate Representation is a language designed to represent the [Rainbow](https://github.com/ntratcliff/Rainbow/) programming language before being encoded into a bitmap image.
 
 The RIR language is simple to understand. Each line contains one unencoded Rainbow statement. Statements are encoded into the output image such that they execute procedurally. 
@@ -23,10 +24,11 @@ The following RIR example represents a simple "Hello World!" program in Rainbow.
 000000  ;exit with status code 0x00
 ```
 
-#Using the RIR Compiler
+# Using the RIR Compiler
 The RIR Compiler takes the path to one text file (preferably `.rir`) and outputs a compiled Rainbow program.
 
-###Additional Arguments
+### Additional Arguments
+
 `--output` or `-o`: the output file. *e.g.* `python compiler.py foo.rir -o bar.bmp`
 
 `--dim-x` or `-x`: output image width, in pixels. *e.g.* `python compiler.py foo.rir -x 4`
